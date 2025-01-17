@@ -5,8 +5,8 @@
 	xmlns:f="sap.f"
 	xmlns:core="sap.ui.core"
 	xmlns="sap.m"
-	controllerName="hr.manutencaodepontogestor.controller.Detail"
-	core:require="{formatter: 'hr/manutencaodepontogestor/util/Formatter'}">
+	controllerName="hr.manutencaodepontorh.controller.Detail"
+	core:require="{formatter: 'hr/manutencaodepontorh/util/Formatter'}">
 	<App id="idApp">
 	    <Page id="MainPage" showHeader="true">
 	    <landmarkInfo>

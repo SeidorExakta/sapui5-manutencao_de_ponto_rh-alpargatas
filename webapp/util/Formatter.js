@@ -39,11 +39,11 @@ sap.ui.define([], function () {
 
 });
 
-// jQuery.sap.declare("hr.manutencaodepontogestor.webapp.util.Formatter");
+// jQuery.sap.declare("hr.manutencaodepontorh.webapp.util.Formatter");
 
 // jQuery.sap.require("sap.ui.core.format.DateFormat");
 
-// hr.manutencaodepontogestor.webapp.util.Formatter = {
+// hr.manutencaodepontorh.webapp.util.Formatter = {
 
 //     _statusStateMap: {
 //         "P": "Success",

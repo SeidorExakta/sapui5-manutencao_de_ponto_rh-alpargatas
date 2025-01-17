@@ -14,7 +14,7 @@ sap.ui.define([
 			// start the app UI component
 			this.iStartMyUIComponent({
 				componentConfig: {
-					name: "hr.manutencaodepontogestor",
+					name: "hr.manutencaodepontorh",
 					async: true
 				},
 				hash: oOptions.hash,

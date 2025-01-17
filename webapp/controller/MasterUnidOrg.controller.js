@@ -11,7 +11,7 @@ sap.ui.define([
 ], function (BaseController, JSONModel, Filter, Sorter, FilterOperator, GroupHeaderListItem, Device, Fragment, formatter) {
     "use strict";
 
-    return BaseController.extend("hr.manutencaodepontogestor.controller.MasterUnidOrg", {
+    return BaseController.extend("hr.manutencaodepontorh.controller.MasterUnidOrg", {
 
         formatter: formatter,
 
@@ -95,7 +95,7 @@ sap.ui.define([
             if (!this.byId("viewSettingsDialog")) {
                 Fragment.load({
                     id: this.getView().getId(),
-                    name: "manutencaodepontogestor.view.ViewSettingsDialog",
+                    name: "manutencaodepontorh.view.ViewSettingsDialog",
                     controller: this
                 }).then(function (oDialog) {
                     this.getView().addDependent(oDialog);

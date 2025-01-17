@@ -4,7 +4,7 @@ sap.ui.define([
 ], function (Controller, History) {
     "use strict";
 
-    return Controller.extend("hr.manutencaodepontogestor.controller.BaseController", {
+    return Controller.extend("hr.manutencaodepontorh.controller.BaseController", {
         /**
          * Convenience method for accessing the router in every controller of the application.
          * @public

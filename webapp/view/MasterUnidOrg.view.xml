@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="hr.manutencaodepontogestor.controller.MasterUnidOrg"
+    controllerName="hr.manutencaodepontorh.controller.MasterUnidOrg"
     xmlns="sap.m"
     xmlns:semantic="sap.m.semantic"
     xmlns:mvc="sap.ui.core.mvc"

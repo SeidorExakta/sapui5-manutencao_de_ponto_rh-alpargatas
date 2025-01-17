@@ -1,12 +1,12 @@
 <mvc:View
-	controllerName="hr.manutencaodepontogestor.controller.Maintenance"
+	controllerName="hr.manutencaodepontorh.controller.Maintenance"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:l="sap.ui.layout"
 	xmlns:core="sap.ui.core"
 	xmlns:semantic="sap.f.semantic"
 	xmlns:form="sap.ui.layout.form"
-	core:require="{formatter: 'hr/manutencaodepontogestor/util/Formatter'}">
+	core:require="{formatter: 'hr/manutencaodepontorh/util/Formatter'}">
 	<App id="layout">
 		<Page id="idApp"
 			title="Manutenção das Marcações"

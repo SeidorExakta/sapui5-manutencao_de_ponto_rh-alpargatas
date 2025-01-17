@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName="hr.manutencaodepontogestor.controller.App"
+	controllerName="hr.manutencaodepontorh.controller.App"
 	displayBlock="true"
 	height="100%"
 	xmlns="sap.m"

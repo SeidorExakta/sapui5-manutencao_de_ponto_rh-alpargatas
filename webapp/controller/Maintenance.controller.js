@@ -15,7 +15,7 @@ sap.ui.define([
     MessageBox) {
     "use strict";
 
-    // var sServiceUrl = ("/sap/opu/odata/sap/ZMAINT_MANAGER_POINT_SRV/");
+    // var sServiceUrl = ("/sap/opu/odata/sap/ZMAINT_RH_POINT_SRV/");
     // var oOData = new sap.ui.model.odata.ODataModel(sServiceUrl, true);
     var oOData;
     var sIndexEstorn = "";
@@ -27,7 +27,7 @@ sap.ui.define([
     var that;
     var period;
 
-    return BaseController.extend("hr.manutencaodepontogestor.controller.Maintenance", {
+    return BaseController.extend("hr.manutencaodepontorh.controller.Maintenance", {
 
         onInit: function () {
             // Step adicional em todas as apps pra funcionar essa gambiarra de acesso ao oModel no Workzone
@@ -58,10 +58,10 @@ sap.ui.define([
             this.getView().getModel().read(sEntitySet, {
                 success: function (oData, response) {
                     if (typeof this._oDialog === "undefined") {
-                        this._oDialog = sap.ui.xmlfragment("hr.manutencaodepontogestor.view.fragments." + sView, this);
+                        this._oDialog = sap.ui.xmlfragment("hr.manutencaodepontorh.view.fragments." + sView, this);
                     } else {
                         this._oDialog.destroy();
-                        this._oDialog = sap.ui.xmlfragment("hr.manutencaodepontogestor.view.fragments." + sView, this);
+                        this._oDialog = sap.ui.xmlfragment("hr.manutencaodepontorh.view.fragments." + sView, this);
                     }
                     switch (sView) {
                         case "ValueHelpDialog":

@@ -1,7 +1,7 @@
 /*global QUnit*/
 
 sap.ui.define([
-	"hr/manutencao_de_ponto_gestor/controller/Detail.controller"
+	"hr/manutencao_de_ponto_rh/controller/Detail.controller"
 ], function (Controller) {
 	"use strict";
 

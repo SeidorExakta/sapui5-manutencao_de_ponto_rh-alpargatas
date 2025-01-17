@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
     <edmx:DataServices m:DataServiceVersion="2.0">
-        <Schema Namespace="ZMAINT_MANAGER_POINT_SRV" xml:lang="pt" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <Schema Namespace="ZMAINT_RH_POINT_SRV" xml:lang="pt" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
             <EntityType Name="frequency" sap:content-version="1">
                 <Key>
                     <PropertyRef Name="period"/>
@@ -33,7 +33,7 @@
                 <Property Name="zterf" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="class" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="justificativa" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <NavigationProperty Name="FrequencyToMsgsNav" Relationship="ZMAINT_MANAGER_POINT_SRV.FrequencyToMsgs" FromRole="FromRole_FrequencyToMsgs" ToRole="ToRole_FrequencyToMsgs"/>
+                <NavigationProperty Name="FrequencyToMsgsNav" Relationship="ZMAINT_RH_POINT_SRV.FrequencyToMsgs" FromRole="FromRole_FrequencyToMsgs" ToRole="ToRole_FrequencyToMsgs"/>
             </EntityType>
             <EntityType Name="mensagens" sap:content-version="1">
                 <Key>
@@ -95,8 +95,8 @@
                 <Property Name="pernr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="STATUS" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="LOG" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <NavigationProperty Name="NAVRESULT" Relationship="ZMAINT_MANAGER_POINT_SRV.MARCA_RESULT" FromRole="FromRole_MARCA_RESULT" ToRole="ToRole_MARCA_RESULT"/>
-                <NavigationProperty Name="marcacoesSet" Relationship="ZMAINT_MANAGER_POINT_SRV.MARCA_MARCACOES" FromRole="FromRole_MARCA_MARCACOES" ToRole="ToRole_MARCA_MARCACOES"/>
+                <NavigationProperty Name="NAVRESULT" Relationship="ZMAINT_RH_POINT_SRV.MARCA_RESULT" FromRole="FromRole_MARCA_RESULT" ToRole="ToRole_MARCA_RESULT"/>
+                <NavigationProperty Name="marcacoesSet" Relationship="ZMAINT_RH_POINT_SRV.MARCA_MARCACOES" FromRole="FromRole_MARCA_MARCACOES" ToRole="ToRole_MARCA_MARCACOES"/>
             </EntityType>
             <EntityType Name="organizationalUnits" sap:content-version="1">
                 <Key>
@@ -268,8 +268,8 @@
                 <Property Name="msg2" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
             </EntityType>
             <Association Name="MARCA_MARCACOES" sap:content-version="1">
-                <End Type="ZMAINT_MANAGER_POINT_SRV.Marca" Multiplicity="1" Role="FromRole_MARCA_MARCACOES"/>
-                <End Type="ZMAINT_MANAGER_POINT_SRV.marcacoes" Multiplicity="*" Role="ToRole_MARCA_MARCACOES"/>
+                <End Type="ZMAINT_RH_POINT_SRV.Marca" Multiplicity="1" Role="FromRole_MARCA_MARCACOES"/>
+                <End Type="ZMAINT_RH_POINT_SRV.marcacoes" Multiplicity="*" Role="ToRole_MARCA_MARCACOES"/>
                 <ReferentialConstraint>
                     <Principal Role="FromRole_MARCA_MARCACOES">
                         <PropertyRef Name="data"/>
@@ -280,8 +280,8 @@
                 </ReferentialConstraint>
             </Association>
             <Association Name="MARCA_RESULT" sap:content-version="1">
-                <End Type="ZMAINT_MANAGER_POINT_SRV.Marca" Multiplicity="1" Role="FromRole_MARCA_RESULT"/>
-                <End Type="ZMAINT_MANAGER_POINT_SRV.result" Multiplicity="*" Role="ToRole_MARCA_RESULT"/>
+                <End Type="ZMAINT_RH_POINT_SRV.Marca" Multiplicity="1" Role="FromRole_MARCA_RESULT"/>
+                <End Type="ZMAINT_RH_POINT_SRV.result" Multiplicity="*" Role="ToRole_MARCA_RESULT"/>
                 <ReferentialConstraint>
                     <Principal Role="FromRole_MARCA_RESULT">
                         <PropertyRef Name="data"/>
@@ -292,8 +292,8 @@
                 </ReferentialConstraint>
             </Association>
             <Association Name="FrequencyToMsgs" sap:content-version="1">
-                <End Type="ZMAINT_MANAGER_POINT_SRV.frequency" Multiplicity="0..1" Role="FromRole_FrequencyToMsgs"/>
-                <End Type="ZMAINT_MANAGER_POINT_SRV.mensagens" Multiplicity="*" Role="ToRole_FrequencyToMsgs"/>
+                <End Type="ZMAINT_RH_POINT_SRV.frequency" Multiplicity="0..1" Role="FromRole_FrequencyToMsgs"/>
+                <End Type="ZMAINT_RH_POINT_SRV.mensagens" Multiplicity="*" Role="ToRole_FrequencyToMsgs"/>
                 <ReferentialConstraint>
                     <Principal Role="FromRole_FrequencyToMsgs">
                         <PropertyRef Name="pernr"/>
@@ -305,42 +305,42 @@
                     </Dependent>
                 </ReferentialConstraint>
             </Association>
-            <EntityContainer Name="ZMAINT_MANAGER_POINT_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
-                <EntitySet Name="frequencySet" EntityType="ZMAINT_MANAGER_POINT_SRV.frequency" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
-                <EntitySet Name="mensagensSet" EntityType="ZMAINT_MANAGER_POINT_SRV.mensagens" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
-                <EntitySet Name="portalMsgsSet" EntityType="ZMAINT_MANAGER_POINT_SRV.portalMsgs" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
-                <EntitySet Name="headerSet" EntityType="ZMAINT_MANAGER_POINT_SRV.header" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
-                <EntitySet Name="dataLimiteSet" EntityType="ZMAINT_MANAGER_POINT_SRV.dataLimite" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
-                <EntitySet Name="resultSet" EntityType="ZMAINT_MANAGER_POINT_SRV.result" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
-                <EntitySet Name="MarcaSet" EntityType="ZMAINT_MANAGER_POINT_SRV.Marca" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
-                <EntitySet Name="organizationalUnitsSet" EntityType="ZMAINT_MANAGER_POINT_SRV.organizationalUnits" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
-                <EntitySet Name="employeesSet" EntityType="ZMAINT_MANAGER_POINT_SRV.employees" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
-                <EntitySet Name="historicosSet" EntityType="ZMAINT_MANAGER_POINT_SRV.historicos" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
-                <EntitySet Name="abonoSet" EntityType="ZMAINT_MANAGER_POINT_SRV.abono" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
-                <EntitySet Name="AbonoValidarConflitoSet" EntityType="ZMAINT_MANAGER_POINT_SRV.AbonoValidarConflito" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
-                <EntitySet Name="countTileSet" EntityType="ZMAINT_MANAGER_POINT_SRV.countTile" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
-                <EntitySet Name="estornoAbonoSet" EntityType="ZMAINT_MANAGER_POINT_SRV.estornoAbono" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
-                <EntitySet Name="estornoMarcacoesSet" EntityType="ZMAINT_MANAGER_POINT_SRV.estornoMarcacoes" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
-                <EntitySet Name="listAbonosSet" EntityType="ZMAINT_MANAGER_POINT_SRV.listAbonos" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
-                <EntitySet Name="marcacoesSet" EntityType="ZMAINT_MANAGER_POINT_SRV.marcacoes" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
-                <EntitySet Name="aprovReprovSet" EntityType="ZMAINT_MANAGER_POINT_SRV.aprovReprov" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
-                <EntitySet Name="validaElegibilidadeSet" EntityType="ZMAINT_MANAGER_POINT_SRV.validaElegibilidade" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
-                <EntitySet Name="justifSet" EntityType="ZMAINT_MANAGER_POINT_SRV.justif" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
-                <AssociationSet Name="MARCA_MARCACOESSet" Association="ZMAINT_MANAGER_POINT_SRV.MARCA_MARCACOES" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+            <EntityContainer Name="ZMAINT_RH_POINT_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="frequencySet" EntityType="ZMAINT_RH_POINT_SRV.frequency" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="mensagensSet" EntityType="ZMAINT_RH_POINT_SRV.mensagens" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="portalMsgsSet" EntityType="ZMAINT_RH_POINT_SRV.portalMsgs" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="headerSet" EntityType="ZMAINT_RH_POINT_SRV.header" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="dataLimiteSet" EntityType="ZMAINT_RH_POINT_SRV.dataLimite" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="resultSet" EntityType="ZMAINT_RH_POINT_SRV.result" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="MarcaSet" EntityType="ZMAINT_RH_POINT_SRV.Marca" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="organizationalUnitsSet" EntityType="ZMAINT_RH_POINT_SRV.organizationalUnits" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="employeesSet" EntityType="ZMAINT_RH_POINT_SRV.employees" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="historicosSet" EntityType="ZMAINT_RH_POINT_SRV.historicos" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="abonoSet" EntityType="ZMAINT_RH_POINT_SRV.abono" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="AbonoValidarConflitoSet" EntityType="ZMAINT_RH_POINT_SRV.AbonoValidarConflito" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="countTileSet" EntityType="ZMAINT_RH_POINT_SRV.countTile" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="estornoAbonoSet" EntityType="ZMAINT_RH_POINT_SRV.estornoAbono" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="estornoMarcacoesSet" EntityType="ZMAINT_RH_POINT_SRV.estornoMarcacoes" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="listAbonosSet" EntityType="ZMAINT_RH_POINT_SRV.listAbonos" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="marcacoesSet" EntityType="ZMAINT_RH_POINT_SRV.marcacoes" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="aprovReprovSet" EntityType="ZMAINT_RH_POINT_SRV.aprovReprov" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="validaElegibilidadeSet" EntityType="ZMAINT_RH_POINT_SRV.validaElegibilidade" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="justifSet" EntityType="ZMAINT_RH_POINT_SRV.justif" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <AssociationSet Name="MARCA_MARCACOESSet" Association="ZMAINT_RH_POINT_SRV.MARCA_MARCACOES" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
                     <End EntitySet="MarcaSet" Role="FromRole_MARCA_MARCACOES"/>
                     <End EntitySet="marcacoesSet" Role="ToRole_MARCA_MARCACOES"/>
                 </AssociationSet>
-                <AssociationSet Name="FrequencyToMsgsSet" Association="ZMAINT_MANAGER_POINT_SRV.FrequencyToMsgs" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                <AssociationSet Name="FrequencyToMsgsSet" Association="ZMAINT_RH_POINT_SRV.FrequencyToMsgs" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
                     <End EntitySet="frequencySet" Role="FromRole_FrequencyToMsgs"/>
                     <End EntitySet="mensagensSet" Role="ToRole_FrequencyToMsgs"/>
                 </AssociationSet>
-                <AssociationSet Name="MARCA_RESULTSet" Association="ZMAINT_MANAGER_POINT_SRV.MARCA_RESULT" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                <AssociationSet Name="MARCA_RESULTSet" Association="ZMAINT_RH_POINT_SRV.MARCA_RESULT" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
                     <End EntitySet="MarcaSet" Role="FromRole_MARCA_RESULT"/>
                     <End EntitySet="resultSet" Role="ToRole_MARCA_RESULT"/>
                 </AssociationSet>
             </EntityContainer>
-            <atom:link rel="self" href="http://dev:8001/sap/opu/odata/sap/ZMAINT_MANAGER_POINT_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
-            <atom:link rel="latest-version" href="http://dev:8001/sap/opu/odata/sap/ZMAINT_MANAGER_POINT_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="self" href="http://dev:8001/sap/opu/odata/sap/ZMAINT_RH_POINT_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://dev:8001/sap/opu/odata/sap/ZMAINT_RH_POINT_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
         </Schema>
     </edmx:DataServices>
 </edmx:Edmx>

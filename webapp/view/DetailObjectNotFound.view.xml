@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName="hr.manutencaodepontogestor.controller.DetailObjectNotFound"
+	controllerName="hr.manutencaodepontorh.controller.DetailObjectNotFound"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
 

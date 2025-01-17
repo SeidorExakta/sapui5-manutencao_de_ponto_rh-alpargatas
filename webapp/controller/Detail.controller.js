@@ -23,7 +23,7 @@ sap.ui.define([
     JSONModel, Message, UIComponent, DateFormat, MessageToast, Dialog, Button, ButtonType, Device, TextArea) {
     "use strict";
     
-    // var sServiceUrl = ("/sap/opu/odata/sap/ZMAINT_MANAGER_POINT_SRV/");
+    // var sServiceUrl = ("/sap/opu/odata/sap/ZMAINT_RH_POINT_SRV/");
     // var oOData = new sap.ui.model.odata.ODataModel(sServiceUrl, true);
     var oOData;
     var gvPeriodo = "";
@@ -31,7 +31,7 @@ sap.ui.define([
     var sData = "";
     var sPernr = "";
     var sOrgeh = "";
-    return BaseController.extend("hr.manutencaodepontogestor.controller.Detail", {
+    return BaseController.extend("hr.manutencaodepontorh.controller.Detail", {
 
         formatter: Formatter,
 
@@ -619,7 +619,7 @@ sap.ui.define([
 
         _getMessagePopover: function () {
             if (!this._oMessagePopover) {
-                this._oMessagePopover = sap.ui.xmlfragment(this.getView().getId(), "hr.manutencaodepontogestor.view.fragments.Mensagens", this);
+                this._oMessagePopover = sap.ui.xmlfragment(this.getView().getId(), "hr.manutencaodepontorh.view.fragments.Mensagens", this);
                 this.getView().addDependent(this._oMessagePopover);
             }
             return this._oMessagePopover;
@@ -1261,7 +1261,7 @@ sap.ui.define([
                         if (!that._pDialog) {
                             that._pDialog = Fragment.load({
                                 id: oView.getId(),
-                                name: "hr.manutencaodepontogestor.view.fragments.Dialog",
+                                name: "hr.manutencaodepontorh.view.fragments.Dialog",
                                 controller: that
                             }).then(function (oDialog) {
                                 oView.addDependent(oDialog);

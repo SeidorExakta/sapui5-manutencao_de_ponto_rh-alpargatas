@@ -11,13 +11,13 @@ sap.ui.define([
 ], function (BaseController, Filter, FilterOperator, Sorter, GroupHeaderListItem, Device, Fragment, formatter, History) {
     "use strict";
 
-    // var sServiceUrl = ("/sap/opu/odata/sap/ZMAINT_MANAGER_POINT_SRV/");
+    // var sServiceUrl = ("/sap/opu/odata/sap/ZMAINT_RH_POINT_SRV/");
     // var oOData = new sap.ui.model.odata.ODataModel(sServiceUrl, true);
     var oOData;
     var pendingFilter;
     var that;
 
-    return BaseController.extend("hr.manutencaodepontogestor.controller.MasterEmployee", {
+    return BaseController.extend("hr.manutencaodepontorh.controller.MasterEmployee", {
 
         onInit: function () {
             // Step adicional em todas as apps pra funcionar essa gambiarra de acesso ao oModel no Workzone
@@ -155,7 +155,7 @@ sap.ui.define([
             if (!this.byId("viewSettingsDialogEmployee")) {
                 Fragment.load({
                     id: this.getView().getId(),
-                    name: "hr.manutencaodepontogestor.view.ViewSettingsDialog",
+                    name: "hr.manutencaodepontorh.view.ViewSettingsDialog",
                     controller: this
                 }).then(function (oDialog) {
                     // connect dialog to the root view of this component (models, lifecycle)

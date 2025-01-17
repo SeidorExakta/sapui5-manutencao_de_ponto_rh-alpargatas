@@ -3,7 +3,7 @@ sap.ui.define([
 ], function (BaseController) {
     "use strict";
 
-    return BaseController.extend("hr.manutencaodepontogestor.controller.NotFound", {
+    return BaseController.extend("hr.manutencaodepontorh.controller.NotFound", {
 
         onInit: function () {
             this.getRouter().getTarget("notFound").attachDisplay(this._onNotFoundDisplayed, this);

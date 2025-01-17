@@ -2,7 +2,7 @@
 
 specVersion: "3.1"
 metadata:
-  name: hr.manutencaodepontogestor
+  name: hr.manutencaodepontorh
 type: application
 framework:
   name: SAPUI5
@@ -34,7 +34,7 @@ server:
       configuration:
         mountPath: /
         services:
-          - urlPath: /sap/opu/odata/sap/ZMAINT_MANAGER_POINT_SRV
+          - urlPath: /sap/opu/odata/sap/ZMAINT_RH_POINT_SRV
             metadataPath: ./webapp/localService/metadata.xml
             mockdataPath: ./webapp/localService/data
             generateMockData: true
@@ -42,5 +42,5 @@ server:
     - name: fiori-tools-preview
       afterMiddleware: fiori-tools-appreload
       configuration:
-        component: hr.manutencaodepontogestor
+        component: hr.manutencaodepontorh
         ui5Theme: sap_horizon

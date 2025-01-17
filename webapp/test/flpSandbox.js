@@ -40,7 +40,7 @@ sap.ui.define([
 								"tileType": "sap.ushell.ui.tile.StaticTile",
 								"properties": {
 									"title": "Manutenção de Ponto da Equipe",
-									"targetURL": "#hrmanutencaodepontogestor-display"
+									"targetURL": "#hrmanutencaodepontorh-display"
 								}
 							}]
 						}]
@@ -51,8 +51,8 @@ sap.ui.define([
 				"adapter": {
 					"config": {
 						"inbounds": {
-							"hrmanutencaodepontogestor-display": {
-								"semanticObject": "hrmanutencaodepontogestor",
+							"hrmanutencaodepontorh-display": {
+								"semanticObject": "hrmanutencaodepontorh",
 								"action": "display",
 								"description": "Manutenção de Ponto da Equipe",
 								"title": "Manutenção de Ponto da Equipe",
@@ -61,8 +61,8 @@ sap.ui.define([
 								},
 								"resolutionResult": {
 									"applicationType": "SAPUI5",
-									"additionalInformation": "SAPUI5.Component=hr.manutencaodepontogestor",
-									"url": sap.ui.require.toUrl("hr/manutencaodepontogestor")
+									"additionalInformation": "SAPUI5.Component=hr.manutencaodepontorh",
+									"url": sap.ui.require.toUrl("hr/manutencaodepontorh")
 								}
 							}
 						}

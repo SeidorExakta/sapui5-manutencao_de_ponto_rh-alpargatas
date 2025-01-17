@@ -11,7 +11,7 @@ sap.ui.define([
 
     var LayoutType = library.LayoutType;
 
-    return UIComponent.extend("hr.manutencaodepontogestor.Component", {
+    return UIComponent.extend("hr.manutencaodepontorh.Component", {
 
         metadata: {
             manifest: "json"

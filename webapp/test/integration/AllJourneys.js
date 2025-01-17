@@ -7,7 +7,7 @@ sap.ui.define([
 
 	Opa5.extendConfig({
 		arrangements: new Startup(),
-		viewNamespace: "hr.manutencaodepontogestor.view.",
+		viewNamespace: "hr.manutencaodepontorh.view.",
 		autoWait: true
 	});
 });

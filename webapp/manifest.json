@@ -1,7 +1,7 @@
 {
   "_version": "1.65.0",
   "sap.app": {
-    "id": "hr.manutencaodepontogestor",
+    "id": "hr.manutencaodepontorh",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -17,7 +17,7 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/sap/opu/odata/sap/ZMAINT_MANAGER_POINT_SRV/",
+        "uri": "/sap/opu/odata/sap/ZMAINT_RH_POINT_SRV/",
         "type": "OData",
         "settings": {
           "annotations": [],
@@ -28,8 +28,8 @@
     },
     "crossNavigation": {
       "inbounds": {
-        "ManutencaoDePontoGestor-Display": {
-          "semanticObject": "ManutencaoDePontoGestor",
+        "manutencaodepontorh-Display": {
+          "semanticObject": "manutencaodepontorh",
           "action": "Display",
           "title": "{{flpTitle}}",
           "signature": {
@@ -73,7 +73,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "hr.manutencaodepontogestor.i18n.i18n"
+          "bundleName": "hr.manutencaodepontorh.i18n.i18n"
         }
       },
       "": {
@@ -97,7 +97,7 @@
     "routing": {
       "config": {
         "viewType": "XML",
-        "viewPath": "hr.manutencaodepontogestor.view",
+        "viewPath": "hr.manutencaodepontorh.view",
         "controlId": "layout",
         "controlAggregation": "midColumnPages",
         "bypassed": {
@@ -191,7 +191,7 @@
       }
     },
     "rootView": {
-      "viewName": "hr.manutencaodepontogestor.view.App",
+      "viewName": "hr.manutencaodepontorh.view.App",
       "type": "XML",
       "async": true,
       "id": "App"
@@ -199,6 +199,6 @@
   },
   "sap.cloud": {
     "public": true,
-    "service": "hrmanutencaodepontogestor"
+    "service": "hrmanutencaodepontorh"
   }
 }

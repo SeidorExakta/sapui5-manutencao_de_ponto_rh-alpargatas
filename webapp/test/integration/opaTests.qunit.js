@@ -1,6 +1,6 @@
 /* global QUnit */
 
-sap.ui.require(["hr/manutencaodepontogestor/test/integration/AllJourneys"
+sap.ui.require(["hr/manutencaodepontorh/test/integration/AllJourneys"
 ], function () {
 	QUnit.config.autostart = false;
 	QUnit.start();

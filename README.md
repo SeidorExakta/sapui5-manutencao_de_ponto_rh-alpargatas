@@ -7,8 +7,8 @@
 |**Generation Platform**<br>SAP Business Application Studio|
 |**Template Used**<br>simple|
 |**Service Type**<br>SAP System (ABAP On Premise)|
-|**Service URL**<br>http://dev:8001/sap/opu/odata/sap/ZMAINT_MANAGER_POINT_SRV|
-|**Module Name**<br>manutencao_de_ponto_gestor|
+|**Service URL**<br>http://dev:8001/sap/opu/odata/sap/ZMAINT_RH_POINT_SRV|
+|**Module Name**<br>manutencao_de_ponto_rh|
 |**Application Title**<br>Manutenção de Ponto da Equipe|
 |**Namespace**<br>hr|
 |**UI5 Theme**<br>sap_horizon|
@@ -17,7 +17,7 @@
 |**Enable TypeScript**<br>False|
 |**Add Eslint configuration**<br>False|
 
-## manutencao_de_ponto_gestor
+## manutencao_de_ponto_rh
 
 Manutenção de Ponto da Equipe
 
