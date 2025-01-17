@@ -1,0 +1,103 @@
+<mvc:View
+	controllerName="hr.manutencaodepontogestor.controller.MasterEmployee"
+	xmlns="sap.m"
+	xmlns:semantic="sap.m.semantic"
+	xmlns:mvc="sap.ui.core.mvc">
+	<App id="layout"> 
+	<semantic:SemanticPage
+		id="EmployeesPage"
+		title="Empregados"
+		showNavButton="false"
+		navButtonPress=".onBackPress"
+		showFooter="false">
+		<semantic:content>
+			<List
+				id="list"
+				width="auto"
+				class="sapFDynamicPageAlignContent"
+				items="{
+					path: 'Employees>/results',
+					sorter: {
+						path: 'orgehTxt',
+						descending: false
+					},
+					filters : { path : 'count', operator : 'GE', value1 : 0 } 
+				}"
+				busyIndicatorDelay="{masterView>/delay}"
+				noDataText="{masterView>/noDataText}"
+				
+				growing="true"
+				growingScrollToLoad="true"
+				updateFinished=".onUpdateFinished"
+				selectionChange=".onSelectionChange">
+				<!-- 
+				<infoToolbar>
+					<Toolbar
+						active="true"
+						id="filterBar"
+						visible="{masterView>/isFilterBarVisible}"
+						press=".onOpenViewSettings">
+						<Title
+							id="filterBarLabel"
+							text="{masterView>/filterBarLabel}"
+							level="H3"/>
+					</Toolbar>
+				</infoToolbar>
+				-->
+				<headerToolbar>
+					<OverflowToolbar id="idOverflowToolbar">
+						<SearchField
+							id="searchField"
+							showRefreshButton="true"
+							tooltip="{i18n>masterSearchTooltip}"
+							search=".onSearch"
+							width="auto">
+							<layoutData>
+								<OverflowToolbarLayoutData id="_IDEGen_overflowtoolbarlayoutdata0"
+									minWidth="150px"
+									maxWidth="240px"
+									shrinkable="true"
+									priority="NeverOverflow"/>
+							</layoutData>
+						</SearchField>
+						<ToolbarSpacer id="_IDEGen_toolbarspacer0"/> 
+						<Button
+							id="sortButton"
+							visible="false"
+							press=".onOpenViewSettings"
+							icon="sap-icon://sort"
+							type="Transparent"/>
+						<Button
+							id="filterButton"
+							visible="true"
+							press=".onOpenViewSettings"
+							icon="sap-icon://filter"
+							type="Transparent"/>
+						<Button
+							id="groupButton"
+							visible="false"
+							press=".onOpenViewSettings"
+							icon="sap-icon://group-2"
+							type="Transparent"/>
+						<Button
+							id="pendFilterButton"
+							visible="false"
+							press=".onPendingFilter"
+							text="Apenas Pendências"
+							icon="sap-icon://employee-rejections"
+							type="Transparent"/>
+					</OverflowToolbar>
+				</headerToolbar>
+				<items>
+					<StandardListItem id="idStandardListItem"
+						title="{Employees>cname}"
+						type="Active"
+						counter="{Employees>count}"
+						press=".onEmployeeItemPress">
+					</StandardListItem>
+				</items>
+			</List>
+		</semantic:content>
+	</semantic:SemanticPage>
+	</App>
+</mvc:View>

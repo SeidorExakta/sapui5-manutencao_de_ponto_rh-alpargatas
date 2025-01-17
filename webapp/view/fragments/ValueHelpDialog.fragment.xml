@@ -1,0 +1,33 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<TableSelectDialog contentWidth="40%" id="idTableSelectDialogList" noDataText="{i18n>noData}" multiSelect="false" title="{i18n>shTitleJustificativa}"
+		confirm=".onConfirm" search=".onSearch" liveChange=".onSearch" cancel=".onCancel" items="{ path : 'list>/Lista' }">
+		<ColumnListItem id="_IDEGen_columnlistitem0">
+			<cells>
+				<Text text="{path : 'list>awart'}"/>
+			</cells>
+			<cells>
+				<Text text="{path : 'list>atext'}"/>
+			</cells>
+			<cells>
+				<Text text="{path : 'list>art01'}"/>
+			</cells>
+		</ColumnListItem>
+		<columns>
+			<Column width="20%">
+				<header>
+					<Title text="{i18n>shTitleColumnTpAusPres}"/>
+				</header>
+			</Column>
+			<Column width="40%">
+				<header>
+					<Title text="{i18n>shTitleColumnAusPresDescription}"/>
+				</header>
+			</Column>
+			<Column width="20%" visible="false">
+				<header>
+					<Title  text="{i18n>shTitleColumnCodAusPres}"/>
+				</header>
+			</Column>
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>

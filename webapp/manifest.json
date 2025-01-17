@@ -1,0 +1,204 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "hr.manutencaodepontogestor",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.15.0",
+      "toolsId": "d99b1dd8-47da-482b-95cb-29e2d3fc89e2"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZMAINT_MANAGER_POINT_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "ManutencaoDePontoGestor-Display": {
+          "semanticObject": "ManutencaoDePontoGestor",
+          "action": "Display",
+          "title": "{{flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.128.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "hr.manutencaodepontogestor.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      },
+      "data": {
+        "type": "sap.ui.model.json.JSONModel",
+        "settings": {},
+        "preload": false
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "viewType": "XML",
+        "viewPath": "hr.manutencaodepontogestor.view",
+        "controlId": "layout",
+        "controlAggregation": "midColumnPages",
+        "bypassed": {
+          "target": [
+            "MasterEmployee"
+          ]
+        },
+        "async": true,
+        "clearControlAggregation": true,
+        "viewLevel": 1
+      },
+      "routes": [
+        {
+          "name": "MasterEmployee",
+          "pattern": "MasterEmployee",
+          "titleTarget": "",
+          "target": [
+            "MasterEmployee"
+          ]
+        },
+        {
+          "name": "MasterEmployee",
+          "pattern": "MasterEmployee/{orgeh}",
+          "titleTarget": "",
+          "target": [
+            "MasterEmployee"
+          ]
+        },        
+        {
+          "name": "Detail",
+          "pattern": "Detail/{pernr}/Detail/{datum}/Detail{orgeh}",
+          "titleTarget": "",
+          "target": [
+            "Detail",
+            "MasterEmployee"
+          ]
+        },
+        {
+          "name": "Maintenance",
+          "pattern": "Maintenance/{datum}/Maintenance/{pernr}/Maintenance/{orgeh}/Maintenance/{hours}/Mainteance/{classe}/Maintenance/{marks}/Maintenance/{justs}/Maintenance/{joacc}/Maintenance/{error1}/Maintenance/{etext1}/Maintenance/{error2}/Maintenance/{etext2}/Maintenance/{screen}/Maintenance/{period}",
+          "target": [
+            "Maintenance"
+          ]
+        },
+        {
+          "name": "DetailBack",
+          "pattern": "DetailBack/{datum}",
+          "titleTarget": "",
+          "target": [
+            "DetailBack",
+            "MasterEmployeeBack"
+          ]
+        }
+      ],
+      "targets": {
+        "Detail": {
+          "viewName": "Detail",
+          "viewId": "detail",
+          "viewLevel": 0,
+          "controlId": "layout",
+          "controlAggregation": "midColumnPages",
+          "transition": "slide"
+        },
+        "DetailBack": {
+          "viewName": "Detail",
+          "viewId": "detailBack",
+          "controlId": "layout",
+          "controlAggregation": "midColumnPages",
+          "transition": "slide"
+        },
+        "MasterEmployee": {
+          "viewType": "XML",
+          "viewName": "MasterEmployee",
+          "viewId": "masterEmployee",
+          "viewLevel": 1,
+          "controlId": "layout",
+          "controlAggregation": "beginColumnPages"
+        },
+        "MasterEmployeeBack": {
+          "viewName": "MasterEmployee",
+          "viewId": "masterEmployeeBack",
+          "controlId": "layout",
+          "controlAggregation": "beginColumnPages"
+        },
+        "Maintenance": {
+          "viewName": "Maintenance",
+          "viewId": "maintenance",
+          "controlId": "layout",
+          "controlAggregation": "midColumnPages"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "hr.manutencaodepontogestor.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "hrmanutencaodepontogestor"
+  }
+}

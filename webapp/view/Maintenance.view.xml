@@ -1,0 +1,167 @@
+<mvc:View
+	controllerName="hr.manutencaodepontogestor.controller.Maintenance"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns:semantic="sap.f.semantic"
+	xmlns:form="sap.ui.layout.form"
+	core:require="{formatter: 'hr/manutencaodepontogestor/util/Formatter'}">
+	<App id="layout">
+		<Page id="idApp"
+			title="Manutenção das Marcações"
+			showNavButton="true" navButtonPress="onNavBack" >
+			<content>
+				<ObjectHeader id="oh1" responsive="true" binding="{Marcacoes>/results/0}" intro="{Description}" title="{Name}">
+			        <statuses>
+		               <ObjectStatus id="idObjStatDt" title="Data"/>	
+		               	<ObjectStatus id="idObjStatHd" title="Horário Diário"/>
+		               	
+		               	<ObjectStatus id="idObjStatJo" title="Jornada Cumprida"/>
+		               	<ObjectStatus id="idObjStatJoCumprir" title="Jornada a Cumprir"/>
+		               	
+		               	<ObjectStatus id="idObjStatError" state="Error" title="Status"/>
+	                </statuses>
+				</ObjectHeader>
+					<Panel id="idPanelMarcacoes" width="auto" class="sapUiResponsiveMargin" accessibleRole="Region">
+					<headerToolbar>
+						<OverflowToolbar id="_IDEGen_overflowtoolbar0">
+							<Title id="_IDEGen_title0" text="Marcações"/>
+						</OverflowToolbar>
+					</headerToolbar>
+					<content>
+						<TimePicker
+							id="idTpMarcacoes"
+							width="27%"
+							placeholder="Inserir novas marcações"
+							valueFormat="HH:mm"
+							displayFormat="HH:mm"
+							change="handleChange"/>
+							<Button id="idBtnMarcacoes"	text="Inserir" press="onCriarMarcacoes" />
+							<TextArea xmlns="sap.m" rows="1" id="idJustificativa" placeholder="Inserir Justificativa"/>
+						<VBox id="_IDEGen_vbox0">
+							<FlexBox id="_IDEGen_flexbox0" alignContent="Center" justifyContent="Center">
+								<Table items="{Marcacoes>/results}" id="idTableMarks" width="100%">
+									<columns>
+										<Column id="_IDEGen_column0" width="auto" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text0" text="Horário"/></Column>
+										<Column id="_IDEGen_column1" width="auto" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text1" text="Motivo"/></Column>
+										<Column id="_IDEGen_column2" width="auto" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text2" text="Origem"/></Column>
+										<Column id="_IDEGen_column3" width="auto" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text3" text="Eliminar"/></Column>
+										<Column id="_IDEGen_column57" width="250px" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text57" text="Justificativa"/></Column>
+										<Column id="_IDEGen_column58" width="250px" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text58" text="Resposta Justificativa"/></Column>
+										<Column id="_IDEGen_column56" width="auto" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text56" text="Status Justificativa"/></Column>
+									</columns>
+									<items>
+										<ColumnListItem id="idTableColumnMarks">
+											<cells>
+												<ObjectNumber id="_IDEGen_objectnumber0" number="{Marcacoes>marks}" />
+												<ObjectNumber id="_IDEGen_objectnumber1" number="{Marcacoes>motiv}" />
+												<ObjectNumber id="_IDEGen_objectnumber2" number="{Marcacoes>origem}" />
+												<Button id="idBtnEstornoM"
+													visible="{= ${Marcacoes>origem} === 'Manual' ? true : false }"
+													icon="sap-icon://delete"
+													type="Emphasized"
+													press=".onPressEstorno"/>
+												<ObjectNumber id="_IDEGen_objectnumber60" number="{Marcacoes>justificativa}"/>
+												<ObjectNumber id="_IDEGen_objectnumber61" number="{Marcacoes>respjustificativa}"/>
+												<ObjectNumber id="_IDEGen_objectnumber62" number="{Marcacoes>statjustificativa}"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								
+							</FlexBox>
+						</VBox>
+					</content>
+					<FlexBox id="_IDEGen_flexbox4" alignContent="end" justifyContent="end">
+						<Button id="idBtnConcluir"	text="Concluir" press="onCriarMarcacoesConcl" />
+					</FlexBox>
+				</Panel>
+				<Panel id="idPanelAbono" width="auto" class="sapUiResponsiveMargin" accessibleRole="Region">
+					<headerToolbar>
+						<OverflowToolbar id="_IDEGen_overflowtoolbar1">
+							<Title id="_IDEGen_title1" text="Abono"/>
+						</OverflowToolbar>
+					</headerToolbar>
+					<content>
+						<Text id="_IDEGen_text4" text="De" visible="false"/>
+						<TimePicker
+							id="idTpAbonoDe"
+							width="15%"
+							enabled="false"
+							placeholder="De"
+							valueFormat="HH:mm"
+							displayFormat="HH:mm"
+							change="handleChange"/>
+						<Text id="_IDEGen_text5" text="" width="1%"/>
+						<Text id="_IDEGen_text6" text="Até" visible="false"/>
+						<TimePicker
+							id="idTpAbonoAte"
+							width="15%"
+							enabled="false"
+							placeholder="Até"
+							valueFormat="HH:mm"
+							displayFormat="HH:mm"
+							change="handleChange"/>
+							<Button id="_IDEGen_button0"	text="Inserir" press="onCriarAbono" />
+							<TextArea xmlns="sap.m" rows="1" id="idJustificativa2" placeholder="Inserir Justificativa"/>
+							<!--Text id="_IDEGen_text7" width="50%" text=""></Text>-->
+							<Input
+								fieldGroupIds="fieldGroup01"
+								id="listInput"
+								required="true"
+								maxLength="25"
+								type="Text"
+								value="{data>/atext}"
+								valueStateText="{i18n>valueStateTextList}"
+								tooltip="{i18n>lblCountry}"
+								editable="true"
+								enabled="true"
+								width="auto"
+								showValueHelp="true"
+								valueHelpOnly="true"
+								valueHelpRequest=".onValueHelpRequest"/>
+						<CheckBox id="idCbAbono" text="Periodo Integral" selected="false" enabled="false" select="onCbFlag" />
+						<Table items="{Abono>/results}" id="idTableAbono" width="100%">
+							<columns>
+								<Column id="_IDEGen_column4" width="auto" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text8" text="Abono"/></Column>
+								<Column id="_IDEGen_column5" width="auto" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text9" text="TpPresAus" visible="false"/></Column>
+								<Column id="_IDEGen_column6" width="auto" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text10" text="Periodo"/></Column>
+								<Column id="_IDEGen_column7" width="auto" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text11" text="Origem" visible="false"/></Column>
+								<Column width="250px" demandPopin="true" minScreenWidth="Desktop"><Text text="Justificativa"/></Column>
+								<Column width="250px" demandPopin="true" minScreenWidth="Desktop"><Text text="Resposta Justificativa"/></Column>
+								<Column width="auto" demandPopin="true" minScreenWidth="Desktop"><Text text="Status Justificativa"/></Column>
+								<Column id="_IDEGen_column8" width="auto" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text12" text="Eliminar"/></Column>
+							</columns>
+							<items>
+								<ColumnListItem id="idTableColumnAbono">
+									<cells>
+										<ObjectNumber id="_IDEGen_objectnumber3" number="{Abono>descAbono}" />
+										<ObjectNumber id="_IDEGen_objectnumber4" number="{Abono>tpPreAus}" visible="false"/>
+										<ObjectNumber id="_IDEGen_objectnumber5" number="{Abono>periodoDe}  {Abono>periodoAte}" />
+										<ObjectNumber id="_IDEGen_objectnumber6" number="{Abono>origem}" visible="false"/>
+										<ObjectNumber number="{Abono>justificativa}"/>
+									    <ObjectNumber number="{Abono>respjustificativa}"/>
+										<ObjectNumber number="{Abono>statjustificativa}"/>
+										<Button id="BtnEstornoA"
+											visible="{= ${Abono>origem} === 'M' ? true : false }"
+											icon="sap-icon://delete"
+											type="Emphasized"
+											press=".onPressEstornoAbono"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</content>
+				</Panel>
+			</content>
+			<footer>
+				<OverflowToolbar id="_IDEGen_overflowtoolbar2">
+					<ToolbarSpacer id="_IDEGen_toolbarspacer0"/>
+					<Button id="_IDEGen_button1" text="Salvar" type="Accept" press="onSave" visible="false" />
+					<Button id="_IDEGen_button2" text="Cancelar" type="Reject" press="onCancel" visible="false" />
+				</OverflowToolbar>
+			</footer>
+		</Page>
+	</App>
+</mvc:View>

@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZMAINT_MANAGER_POINT_SRV" xml:lang="pt" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="frequency" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="period"/>
+                    <PropertyRef Name="pernr"/>
+                </Key>
+                <Property Name="period" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="cname" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="datum" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Data" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="hours" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="stdaz" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="marks" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="justs" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="afast" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="prese" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="joacc" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="abwgr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="alldf" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="stell" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="orgeh" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="werks" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="btrtl" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="plans" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="gname" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="persg" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="persk" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="dtlimit" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="rgplnh" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="zterf" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="class" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="justificativa" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="FrequencyToMsgsNav" Relationship="ZMAINT_MANAGER_POINT_SRV.FrequencyToMsgs" FromRole="FromRole_FrequencyToMsgs" ToRole="ToRole_FrequencyToMsgs"/>
+            </EntityType>
+            <EntityType Name="mensagens" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="period"/>
+                    <PropertyRef Name="pernr"/>
+                </Key>
+                <Property Name="period" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="error" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="etext" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="portalMsgs" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="error"/>
+                </Key>
+                <Property Name="error" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="etext" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="type" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="header" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="pernr"/>
+                </Key>
+                <Property Name="pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="cname" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="stell" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="orgeh" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="werks" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="btrtl" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="plans" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="gname" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="persg" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="persk" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="rgplnh" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="msg_eleg" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="dataLimite" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="period"/>
+                </Key>
+                <Property Name="period" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="dtlimit" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="result" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="data"/>
+                    <PropertyRef Name="pernr"/>
+                </Key>
+                <Property Name="data" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Registro hora" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="STATUS" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LOG" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Marca" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="data"/>
+                </Key>
+                <Property Name="data" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Registro hora" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="pernr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="STATUS" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LOG" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="NAVRESULT" Relationship="ZMAINT_MANAGER_POINT_SRV.MARCA_RESULT" FromRole="FromRole_MARCA_RESULT" ToRole="ToRole_MARCA_RESULT"/>
+                <NavigationProperty Name="marcacoesSet" Relationship="ZMAINT_MANAGER_POINT_SRV.MARCA_MARCACOES" FromRole="FromRole_MARCA_MARCACOES" ToRole="ToRole_MARCA_MARCACOES"/>
+            </EntityType>
+            <EntityType Name="organizationalUnits" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="orgeh"/>
+                </Key>
+                <Property Name="orgeh" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="orgehTxt" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="count" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="employees" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="orgeh"/>
+                </Key>
+                <Property Name="orgeh" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="count" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="cname" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="historicos" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="period"/>
+                </Key>
+                <Property Name="period" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="data" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Data" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="title" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="Texto" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="descr" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Texto" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="status" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="user" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="datahora" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="abono" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="data"/>
+                </Key>
+                <Property Name="data" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Data" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="codAbono" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="descAbono" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="tpPreAus" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="periodoDe" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="periodoAte" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="origem" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="jornada" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="justificativa" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="respjustificativa" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="statjustificativa" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="msg1" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="msg2" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="AbonoValidarConflito" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="data"/>
+                    <PropertyRef Name="codAbono"/>
+                    <PropertyRef Name="tpPreAus"/>
+                    <PropertyRef Name="periodoDe"/>
+                    <PropertyRef Name="periodoAte"/>
+                    <PropertyRef Name="pernr"/>
+                </Key>
+                <Property Name="data" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Data" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="codAbono" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="tpPreAus" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="periodoDe" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="periodoAte" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="reaction" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="countTile" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="pernr"/>
+                </Key>
+                <Property Name="pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="data" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="estornoAbono" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="data"/>
+                </Key>
+                <Property Name="data" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Data" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="codAbono" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="tpPreAus" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="periodode" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="periodoate" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="origem" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="estorno" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="jornada" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="msg1" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="msg2" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="estornoMarcacoes" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="data"/>
+                </Key>
+                <Property Name="data" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="marks" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="motiv" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="origem" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="estorn" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="jornada" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="msg1" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="msg2" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="listAbonos" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="awart"/>
+                </Key>
+                <Property Name="awart" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="atext" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="art01" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="mintg" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="marcacoes" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="data"/>
+                    <PropertyRef Name="pernr"/>
+                </Key>
+                <Property Name="data" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Data" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="marks" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="motiv" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="origem" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="justificativa" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="respjustificativa" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="marksCab" Type="Edm.String" Nullable="false" MaxLength="11" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="jornada" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="jornadaCumprir" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="msg1" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="msg2" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="aprovReprov" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="data"/>
+                    <PropertyRef Name="pernr"/>
+                </Key>
+                <Property Name="data" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Data" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="hours" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="marks" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="justs" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="prese" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="respjustificativa" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="acao" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="validaElegibilidade" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="period"/>
+                </Key>
+                <Property Name="period" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="justif" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="data"/>
+                    <PropertyRef Name="pernr"/>
+                </Key>
+                <Property Name="data" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Data" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="marks" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="motiv" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="origem" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="justificativa" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="respjustificativa" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="marksCab" Type="Edm.String" Nullable="false" MaxLength="11" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="jornada" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="jornadaCumprir" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="msg1" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="msg2" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="MARCA_MARCACOES" sap:content-version="1">
+                <End Type="ZMAINT_MANAGER_POINT_SRV.Marca" Multiplicity="1" Role="FromRole_MARCA_MARCACOES"/>
+                <End Type="ZMAINT_MANAGER_POINT_SRV.marcacoes" Multiplicity="*" Role="ToRole_MARCA_MARCACOES"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_MARCA_MARCACOES">
+                        <PropertyRef Name="data"/>
+                    </Principal>
+                    <Dependent Role="ToRole_MARCA_MARCACOES">
+                        <PropertyRef Name="data"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="MARCA_RESULT" sap:content-version="1">
+                <End Type="ZMAINT_MANAGER_POINT_SRV.Marca" Multiplicity="1" Role="FromRole_MARCA_RESULT"/>
+                <End Type="ZMAINT_MANAGER_POINT_SRV.result" Multiplicity="*" Role="ToRole_MARCA_RESULT"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_MARCA_RESULT">
+                        <PropertyRef Name="data"/>
+                    </Principal>
+                    <Dependent Role="ToRole_MARCA_RESULT">
+                        <PropertyRef Name="data"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="FrequencyToMsgs" sap:content-version="1">
+                <End Type="ZMAINT_MANAGER_POINT_SRV.frequency" Multiplicity="0..1" Role="FromRole_FrequencyToMsgs"/>
+                <End Type="ZMAINT_MANAGER_POINT_SRV.mensagens" Multiplicity="*" Role="ToRole_FrequencyToMsgs"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_FrequencyToMsgs">
+                        <PropertyRef Name="pernr"/>
+                        <PropertyRef Name="period"/>
+                    </Principal>
+                    <Dependent Role="ToRole_FrequencyToMsgs">
+                        <PropertyRef Name="pernr"/>
+                        <PropertyRef Name="period"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZMAINT_MANAGER_POINT_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="frequencySet" EntityType="ZMAINT_MANAGER_POINT_SRV.frequency" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="mensagensSet" EntityType="ZMAINT_MANAGER_POINT_SRV.mensagens" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="portalMsgsSet" EntityType="ZMAINT_MANAGER_POINT_SRV.portalMsgs" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="headerSet" EntityType="ZMAINT_MANAGER_POINT_SRV.header" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="dataLimiteSet" EntityType="ZMAINT_MANAGER_POINT_SRV.dataLimite" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="resultSet" EntityType="ZMAINT_MANAGER_POINT_SRV.result" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="MarcaSet" EntityType="ZMAINT_MANAGER_POINT_SRV.Marca" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="organizationalUnitsSet" EntityType="ZMAINT_MANAGER_POINT_SRV.organizationalUnits" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="employeesSet" EntityType="ZMAINT_MANAGER_POINT_SRV.employees" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="historicosSet" EntityType="ZMAINT_MANAGER_POINT_SRV.historicos" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="abonoSet" EntityType="ZMAINT_MANAGER_POINT_SRV.abono" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="AbonoValidarConflitoSet" EntityType="ZMAINT_MANAGER_POINT_SRV.AbonoValidarConflito" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="countTileSet" EntityType="ZMAINT_MANAGER_POINT_SRV.countTile" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="estornoAbonoSet" EntityType="ZMAINT_MANAGER_POINT_SRV.estornoAbono" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="estornoMarcacoesSet" EntityType="ZMAINT_MANAGER_POINT_SRV.estornoMarcacoes" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="listAbonosSet" EntityType="ZMAINT_MANAGER_POINT_SRV.listAbonos" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="marcacoesSet" EntityType="ZMAINT_MANAGER_POINT_SRV.marcacoes" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="aprovReprovSet" EntityType="ZMAINT_MANAGER_POINT_SRV.aprovReprov" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="validaElegibilidadeSet" EntityType="ZMAINT_MANAGER_POINT_SRV.validaElegibilidade" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="justifSet" EntityType="ZMAINT_MANAGER_POINT_SRV.justif" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <AssociationSet Name="MARCA_MARCACOESSet" Association="ZMAINT_MANAGER_POINT_SRV.MARCA_MARCACOES" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="MarcaSet" Role="FromRole_MARCA_MARCACOES"/>
+                    <End EntitySet="marcacoesSet" Role="ToRole_MARCA_MARCACOES"/>
+                </AssociationSet>
+                <AssociationSet Name="FrequencyToMsgsSet" Association="ZMAINT_MANAGER_POINT_SRV.FrequencyToMsgs" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="frequencySet" Role="FromRole_FrequencyToMsgs"/>
+                    <End EntitySet="mensagensSet" Role="ToRole_FrequencyToMsgs"/>
+                </AssociationSet>
+                <AssociationSet Name="MARCA_RESULTSet" Association="ZMAINT_MANAGER_POINT_SRV.MARCA_RESULT" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="MarcaSet" Role="FromRole_MARCA_RESULT"/>
+                    <End EntitySet="resultSet" Role="ToRole_MARCA_RESULT"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link rel="self" href="http://dev:8001/sap/opu/odata/sap/ZMAINT_MANAGER_POINT_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://dev:8001/sap/opu/odata/sap/ZMAINT_MANAGER_POINT_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

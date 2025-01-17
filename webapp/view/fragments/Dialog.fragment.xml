@@ -1,0 +1,33 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<TableSelectDialog contentWidth="40%" id="idDialogList" noDataText="{i18n>noData}" multiSelect="false" title="{i18n>shTitleJustificativa}"
+		confirm=".onConfirm" cancel=".onCancel" items="{Justifica>/results}">
+		<ColumnListItem id="_IDEGen_columnlistitem0">
+			<cells>
+				<Text text="{Justifica>marks}"/>
+			</cells>
+			<cells>
+				<Text text="{Justifica>justificativa}"/>
+			</cells>
+			<cells>
+				<Text text="{Justifica>respjustificativa}"/>
+			</cells>
+		</ColumnListItem>
+		<columns>
+			<Column width="20%">
+				<header>
+					<Title text="Marcação"/>
+				</header>
+			</Column>
+			<Column width="30%">
+				<header>
+					<Title text="Justificativa"/>
+				</header>
+			</Column>
+			<Column width="30%">
+				<header>
+					<Title  text="Resposta Justificativa"/>
+				</header>
+			</Column>
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>

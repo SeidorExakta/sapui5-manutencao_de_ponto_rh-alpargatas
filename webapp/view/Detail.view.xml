@@ -1,0 +1,276 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:uxap="sap.uxap"
+	xmlns:layout="sap.ui.layout"
+	xmlns:f="sap.f"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	controllerName="hr.manutencaodepontogestor.controller.Detail"
+	core:require="{formatter: 'hr/manutencaodepontogestor/util/Formatter'}">
+	<App id="idApp">
+	    <Page id="MainPage" showHeader="true">
+	    <landmarkInfo>
+			<PageAccessibleLandmarkInfo id="_IDEGen_pageaccessiblelandmarkinfo0"
+				rootRole="Region"
+				rootLabel="{i18n>Welcome_rootLabel}"
+				contentRole="Main"
+				contentLabel="{i18n>Welcome_contentLabel}"
+				headerRole="Region"
+				headerLabel="{i18n>Welcome_headerLabel}"/>
+		</landmarkInfo>
+		<customHeader>
+			<Bar id="_IDEGen_bar0">
+				<contentLeft>
+					<Button id="enterFullScreenBtn"
+						tooltip="Navegação"
+						icon="sap-icon://menu2"
+						press=".onCloseMasterPress"
+						visible="true"/>
+				</contentLeft>
+				<contentMiddle>
+					<Title id="_IDEGen_title0"
+						level="H2"
+						tooltip="{i18n>welcomeDescription}"
+						text=""/>
+				</contentMiddle>
+				<contentRight>
+					<Button id="_IDEGen_button1"
+						icon="sap-icon://customer"
+						visible="false"
+						press=".onAvatarPress"
+						tooltip="{i18n>avatarButtonTooltip}"/>
+					<ToggleButton id="_IDEGen_togglebutton0"
+						icon="sap-icon://cart"
+						visible="false"
+						pressed="{= ${appView>/layout}.startsWith('ThreeColumns') }"
+						tooltip="{i18n>toCartButtonTooltip}"
+						press=".onToggleCart">
+					</ToggleButton>
+				</contentRight>
+			</Bar>
+		</customHeader>
+	        <content>
+	          <ObjectHeader id="oh1" responsive="true" binding="{header>/results/0}" intro="{Description}" title="{Name}">
+	                <statuses>
+	                	<ObjectStatus id="_IDEGen_objectstatus0" title="NOME" text="{header>cname}"/>
+		          		<ObjectStatus id="_IDEGen_objectstatus1" title="POSIÇÃO" text="{header>plans}"/>
+		          		<ObjectStatus id="_IDEGen_objectstatus2" title="UNIDADE ORG" text="{header>orgeh}"/>
+	                </statuses>
+	                <statuses>
+		          		<ObjectStatus id="_IDEGen_objectstatus3" title="GESTOR" text="{header>gname}"/>
+	                </statuses>
+	            	<statuses>
+	                	<ObjectStatus id="_IDEGen_objectstatus4" title="REGRA PL.HORÁR.TRAB" text="{header>rgplnh}"/>
+	                </statuses>
+	                <headerContainer>
+						<IconTabBar
+							id="idIconTabBar"
+							select="handleIconTabBarSelect"
+							class="sapUiResponsiveContentPadding">
+							<items>
+								<IconTabFilter
+									id="IconTabFilterAll"
+									showAll="true"
+									text="Frequências"
+									design="Horizontal"
+									key="All">
+									<layout:HorizontalLayout id="_IDEGen_horizontallayout0" class="sapUiContentPadding">
+										<DatePicker
+											id="idDpAll"
+											value="2015-11-23"
+											displayFormat="MM-y"
+											change="handleChange"
+											class="sapUiSmallMarginBottom"/>
+										</layout:HorizontalLayout>
+										<Text id="idText01" text="" width="55%"/>
+										<Text id="idTextDtLimiteAll"/>
+									<Table items="{frequency>/results}" id="idTableAll">
+										<columns>
+											<Column id="_IDEGen_column0" width="100px"><Text id="_IDEGen_text2" text="Data"/></Column>
+											<Column id="_IDEGen_column1" width="auto" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text3" text="Horário Diário"/></Column>
+											<Column id="_IDEGen_column2" width="auto" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text4" text="Marcações"/></Column>
+											<Column id="_IDEGen_column3" width="20%" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text5" text="Ausências"/></Column>
+											<Column id="_IDEGen_column4" width="20%" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text6" text="Presenças"/></Column>
+											<Column id="_IDEGen_column5" width="auto" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text7" text="Jornada Cumprida"/></Column>
+											<Column id="_IDEGen_column6" width="auto"><Text id="_IDEGen_text8" text="Status"/></Column>
+											<Column id="_IDEGen_column7" width="auto"><Text id="_IDEGen_text9" text="Ações"/></Column>
+										</columns>
+										<items>
+											<ColumnListItem id="idTableColumnAll">
+												<cells>
+													<ObjectIdentifier id="_IDEGen_objectidentifier0" text="{path: 'frequency>datum', formatter: '.formatter.date'}" />
+													<ObjectNumber id="_IDEGen_objectnumber0" number="{frequency>hours, formatter: '.formatter.date'}" />
+													<!--<ObjectNumber id="_IDEGen_objectnumber1" number="{frequency>marks}" />-->
+													<Text id="_IDEGen_objectnumber1" text="{frequency>marks}" />
+													<ObjectNumber id="_IDEGen_objectnumber2" number="{frequency>justs}" />
+													<ObjectNumber id="_IDEGen_objectnumber3" number="{frequency>prese}" />
+													<ObjectNumber id="_IDEGen_objectnumber4" number="{frequency>joacc}" />
+													<Button id="messagePopoverBtnOk"
+														icon="{ path: '/', formatter: '.buttonIconFormatterOk' }"
+														type="{ path: '/', formatter: '.buttonTypeFormatterOk' }"
+														press=".MessagePopoverPressOk"/>
+													<Button id="idAcao"
+														icon="sap-icon://navigation-right-arrow"
+														type="{ path: '/', formatter: '.buttonTypeFormatterOk' }"
+														press=".onPressAction"/>
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+								</IconTabFilter>
+								<IconTabSeparator id="_IDEGen_icontabseparator0" visible="false"/>
+								<IconTabFilter
+									id="IconTabFilterPendt"
+									icon="sap-icon://approvals"
+									iconColor="Critical"
+									text="A APROVAR"
+									design="Horizontal"
+									visible="true"
+									key="Pendt">
+									<layout:HorizontalLayout id="_IDEGen_horizontallayout2" class="sapUiContentPadding">
+										<DatePicker
+											id="idDpPendt"
+											value="2015-11-23"
+											displayFormat="MM-y"
+											change="handleChange"
+											class="sapUiSmallMarginBottom"/>
+										</layout:HorizontalLayout>
+										<Text id="_IDEGen_text18" text="" width="55%"/>
+										<Text id="idTextDtLimitePendt"/>
+								<Table items="{Pendt>/}" id="idTablePendt">
+									<columns>
+										<Column id="_IDEGen_column15" width="auto"><Text id="_IDEGen_text20" text="Data"/></Column>
+										<Column id="_IDEGen_column16" width="auto" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text21" text="Horário Diário"/></Column>
+										<Column id="_IDEGen_column17" width="auto" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text22" text="Marcações"/></Column>
+										<Column id="_IDEGen_column18" width="auto" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text23" text="Ausências"/></Column>
+										<Column id="_IDEGen_column19" width="auto" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text24" text="Presenças"/></Column>
+										<Column id="_IDEGen_column20" width="auto" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text25" text="Jornada Cumprida"/></Column>
+										<Column id="_IDEGen_column27" width="auto" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text33" text="Justificativa"/></Column>
+										<Column id="idColumnAprovar" width="70px"><Text id="idTextAprovar" text=""/></Column>
+										<Column id="idColumnReprovar" width="80px"><Text id="idTextReprovar" text=""/></Column>
+									</columns>
+									<items>
+										<ColumnListItem id="idTableColumnPendt">
+											<cells>
+												<ObjectIdentifier id="_IDEGen_objectidentifier1" text="{path: 'Pendt>datum', formatter: '.formatter.date'}" />
+												<ObjectNumber id="_IDEGen_objectnumber10" number="{Pendt>hours}" />
+												<!--<ObjectNumber id="_IDEGen_objectnumber11" number="{Pendt>marks}" />-->
+												<Text id="_IDEGen_objectnumber11" text="{Pendt>marks}" />
+												<ObjectNumber id="_IDEGen_objectnumber12" number="{Pendt>justs}" />
+												<ObjectNumber id="_IDEGen_objectnumber13" number="{Pendt>prese}" />
+												<ObjectNumber id="_IDEGen_objectnumber14" number="{Pendt>joacc}" />
+												<Button id="idButtonJustificativa"
+													text="Justificativa"
+													icon=""
+													type=""
+													press=".onPressJustificativa"/>
+												<Button id="idButtonAprovar"
+													text="Aprovar"
+													icon=""
+													type="Accept"
+													press=".onPressAprovar"/>
+												<Button id="idButtonReprovar"
+													text="Reprovar"
+													icon=""
+													type="Reject"
+													press=".onPressReprovar"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								</IconTabFilter>
+								<IconTabSeparator id="_IDEGen_icontabseparator2"/>
+								<IconTabFilter
+									id="IconTabFilterError"
+									icon="sap-icon://message-error"
+									iconColor="Negative"
+									text="A CORRIGIR"
+									design="Horizontal"
+									key="Error">
+									<layout:HorizontalLayout id="_IDEGen_horizontallayout1" class="sapUiContentPadding">
+										<DatePicker
+											id="idDpError"
+											value="2015-11-23"
+											displayFormat="MM-y"
+											change="handleChange"
+											class="sapUiSmallMarginBottom"/>
+										</layout:HorizontalLayout>
+										<Text id="_IDEGen_text100" text="" width="55%"/>
+										<Text id="idTextDtLimiteError"/>
+										<Table items="{Error>/}" id="idTableIncons">
+											<columns>
+												<Column id="_IDEGen_column80" width="auto"><Text id="_IDEGen_text110" text="Data"/></Column>
+												<Column id="_IDEGen_column9" width="auto" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text12" text="Horário Diário"/></Column>
+												<Column id="_IDEGen_column10" width="auto" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text13" text="Marcações"/></Column>
+												<Column id="_IDEGen_column11" width="20%" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text14" text="Ausências"/></Column>
+												<Column id="_IDEGen_column12" width="20%" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text15" text="Presenças"/></Column>
+												<Column id="_IDEGen_column13" width="auto" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text16" text="Jornada Cumprida"/></Column>
+												<Column id="_IDEGen_column14" width="auto"><Text id="_IDEGen_text17" text="Status"/></Column>
+											</columns>
+											<items>
+												<ColumnListItem id="idTableColumnIncons" press=".onPressError" type="Navigation">
+													<cells>
+														<ObjectIdentifier id="idDatum" text="{path: 'Error>datum', formatter: '.formatter.date'}" />
+														<ObjectNumber id="_IDEGen_objectnumber5" number="{Error>hours}" />
+														<!--<ObjectNumber id="_IDEGen_objectnumber6" number="{Error>marks}" />-->
+														<Text id="_IDEGen_objectnumber6" text="{Error>marks}" />
+														<ObjectNumber id="_IDEGen_objectnumber7" number="{Error>justs}" />
+														<ObjectNumber id="_IDEGen_objectnumber8" number="{Error>prese}" />
+														<ObjectNumber id="_IDEGen_objectnumber9" number="{Error>joacc}" />
+														<Button id="messagePopoverBtnIncons"
+															icon="{ path: '/', formatter: '.buttonIconFormatterError' }"
+															type="{ path: '/', formatter: '.buttonTypeFormatterError' }"
+															press=".MessagePopoverPressError"/>
+													</cells>
+												</ColumnListItem>
+											</items>
+										</Table>
+								</IconTabFilter>
+								<IconTabSeparator id="_IDEGen_icontabseparator1"/>
+								<IconTabFilter
+									id="IconTabFilterHist"
+									icon="sap-icon://customer-history"
+									iconColor="Neutral"
+									text="HISTÓRICO"
+									design="Horizontal"
+									key="Error">
+									<layout:HorizontalLayout id="_IDEGen_horizontallayout3" class="sapUiContentPadding">
+										<DatePicker
+											id="idDpHist"
+											value="2015-11-23"
+											displayFormat="MM-y"
+											change="handleChange"
+											class="sapUiSmallMarginBottom"/>
+										</layout:HorizontalLayout>
+										<Text id="_IDEGen_text26" text="" width="55%"/>
+										<Table items="{Hist>/results}" id="idTableHist">
+											<columns>
+												<Column id="_IDEGen_column21" width="80px"><Text id="_IDEGen_text27" text="Data"/></Column>
+												<Column id="_IDEGen_column22" width="130px" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text28" text="Tipo de Solicitação"/></Column>
+												<Column id="_IDEGen_column23" width="350px" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text29" text="Descrição"/></Column>
+												<Column id="_IDEGen_column24" width="70px" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text30" text="Status"/></Column>
+												<Column id="_IDEGen_column25" width="80px" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text31" text="Usuário Modif."/></Column>
+												<Column id="_IDEGen_column26" width="110px" demandPopin="true" minScreenWidth="Desktop"><Text id="_IDEGen_text32" text="Data/Hora do envio"/></Column>
+											</columns>
+											<items>
+												<ColumnListItem id="idTableColumnHist">
+													<cells>
+														<ObjectIdentifier id="_IDEGen_objectidentifier2" text="{path: 'Hist>data', formatter: '.formatter.date'}" />
+														<ObjectNumber id="_IDEGen_objectnumber15" number="{Hist>title}" />
+														<ObjectNumber id="_IDEGen_objectnumber16" number="{Hist>descr}" />
+														<ObjectNumber id="_IDEGen_objectnumber17" number="{Hist>status}" />
+														<ObjectNumber id="_IDEGen_objectnumber18" number="{Hist>user}" />
+														<ObjectNumber id="_IDEGen_objectnumber19" number="{Hist>datahora}" />
+													</cells>
+												</ColumnListItem>
+											</items>
+										</Table>
+								</IconTabFilter>
+							</items>
+						</IconTabBar>
+	                </headerContainer>
+	            </ObjectHeader>
+	        </content>
+    	</Page>
+    </App>
+</mvc:View>
