@@ -15,7 +15,7 @@ sap.ui.define([
     MessageBox) {
     "use strict";
 
-    // var sServiceUrl = ("/sap/opu/odata/sap/ZMAINT_RH_POINT_SRV/");
+    // var sServiceUrl = ("/sap/opu/odata/sap/ZMAINT_HR_POINT_SRV/");
     // var oOData = new sap.ui.model.odata.ODataModel(sServiceUrl, true);
     var oOData;
     var sIndexEstorn = "";

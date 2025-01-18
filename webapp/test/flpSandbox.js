@@ -39,7 +39,7 @@ sap.ui.define([
 							"tiles": [{
 								"tileType": "sap.ushell.ui.tile.StaticTile",
 								"properties": {
-									"title": "Manutenção de Ponto da Equipe",
+									"title": "Manutenção de Ponto RH",
 									"targetURL": "#hrmanutencaodepontorh-display"
 								}
 							}]
@@ -54,8 +54,8 @@ sap.ui.define([
 							"hrmanutencaodepontorh-display": {
 								"semanticObject": "hrmanutencaodepontorh",
 								"action": "display",
-								"description": "Manutenção de Ponto da Equipe",
-								"title": "Manutenção de Ponto da Equipe",
+								"description": "Manutenção de Ponto RH",
+								"title": "Manutenção de Ponto RH",
 								"signature": {
 									"parameters": {}
 								},

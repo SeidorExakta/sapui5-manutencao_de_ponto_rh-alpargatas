@@ -23,7 +23,7 @@ sap.ui.define([
     JSONModel, Message, UIComponent, DateFormat, MessageToast, Dialog, Button, ButtonType, Device, TextArea) {
     "use strict";
     
-    // var sServiceUrl = ("/sap/opu/odata/sap/ZMAINT_RH_POINT_SRV/");
+    // var sServiceUrl = ("/sap/opu/odata/sap/ZMAINT_HR_POINT_SRV/");
     // var oOData = new sap.ui.model.odata.ODataModel(sServiceUrl, true);
     var oOData;
     var gvPeriodo = "";
@@ -964,12 +964,12 @@ sap.ui.define([
                     sDateAll = this.formatToDate(oSuccess.results[a].datum);
                     if (sDateAll < sDtAtual && sDtLimite >= sDtAtual) {
 
-                        //if (oSuccess.results[a].hours === "COMP" || oSuccess.results[a].hours === "DSR" || oSuccess.results[a].hours === "FOLG" ||
-                        //     oSuccess.results[a].hours === "Feriado") {
+                        if (oSuccess.results[a].hours === "COMP" || oSuccess.results[a].hours === "DSR" || oSuccess.results[a].hours === "FOLG" ||
+                             oSuccess.results[a].hours === "Feriado") {
                              oTable.getItems()[a].getCells()[7].setVisible(true);
-                        //} else {
-                        //    oTable.getItems()[a].getCells()[7].setVisible(false);
-                       // }
+                        } else {
+                            oTable.getItems()[a].getCells()[7].setVisible(false);
+                        }
                     } else {
                         oTable.getItems()[a].getCells()[7].setVisible(false);
                     }

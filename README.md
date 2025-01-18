@@ -7,9 +7,9 @@
 |**Generation Platform**<br>SAP Business Application Studio|
 |**Template Used**<br>simple|
 |**Service Type**<br>SAP System (ABAP On Premise)|
-|**Service URL**<br>http://dev:8001/sap/opu/odata/sap/ZMAINT_RH_POINT_SRV|
+|**Service URL**<br>http://dev:8001/sap/opu/odata/sap/ZMAINT_HR_POINT_SRV|
 |**Module Name**<br>manutencao_de_ponto_rh|
-|**Application Title**<br>Manutenção de Ponto da Equipe|
+|**Application Title**<br>Manutenção de Ponto RH|
 |**Namespace**<br>hr|
 |**UI5 Theme**<br>sap_horizon|
 |**UI5 Version**<br>1.128.1|
@@ -19,7 +19,7 @@
 
 ## manutencao_de_ponto_rh
 
-Manutenção de Ponto da Equipe
+Manutenção de Ponto RH
 
 ### Starting the generated app
 
