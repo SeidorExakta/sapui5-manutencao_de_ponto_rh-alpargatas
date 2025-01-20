@@ -352,9 +352,9 @@ sap.ui.define([
 
                         }
 
-                        if (resto != 0) {
-                            MessageBox.error("Apontamento tem que ser par");
-                        } else {
+                        //if (resto != 0) {
+                        //    MessageBox.error("Apontamento tem que ser par");
+                        //} else {
 
                             oOData.create("/MarcaSet", postData, {
 
@@ -397,7 +397,7 @@ sap.ui.define([
 
                                 }
                             });
-                        }
+                        //}
                     }
                 }),
                 endButton: new Button({
